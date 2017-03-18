@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="./jq/jquery-1.5.1.min.js" ></script>
+	<title>js练习</title>
+	<style type="text/css">
+		body,html,div,ul,li{
+			padding:0;
+			margin:0; 
+		}
+		.clearfix::after{
+			content: "";
+			height:0px;
+			display:block;
+			clear:both;
+		}
+		.ss .navva{
+			width:800px;
+			height:50px;
+			
+			
+			list-style: none;
+		}
+		.ss div{
+			height:50px;
+			width:400px;
+			background-color: #E0E0E0;
+
+		}
+		.ss .navva li{
+			height:50px;
+			width:100px;
+			float:left;
+			font-size: 15px;
+			line-height: 50px;
+			text-align: center;
+			
+		}
+		.bgset{
+			background-color: gray;
+			color:black;
+		}
+		.set{
+			display:none;
+		}
+		.rectangle{
+			position: relative;
+			width:500px;
+			height:500px;
+			
+		}
+		.box-out{
+			position: relative;
+			width:300px;
+			height:300px;
+			background:red;
+
+		}
+		.box-in{
+			position:absolute;
+			width:150px;
+			height:150px;
+			background:blue;
+			left:50%;
+			top:50%;
+			margin-top: -75px;
+			margin-left:-75px;
+
+		}
+		.box-in-bgcolor{
+			background-color: gray;
+		}
+			
+	</style>
+	<script type="text/javascript">
+	$(function(){
+		var nav=$(".navva li");
+		nav.mouseover(function(){
+			$(this).addClass("bgset").siblings().removeClass("bgset");
+			var index=$(this).index();
+			$(".ss div").eq(index).removeClass("set").siblings("div").addClass("set");
+		})
+
+		var bt1=$("#but1");
+		var bt2=$("#but2");
+		bt1.click(function(){
+			$(".box-in").addClass("box-in-bgcolor");
+		})
+		bt2.click(function(){
+			$(".box-in").removeClass("box-in-bgcolor");
+		})
+		
+
+
+		
+	});
+</script>
+</head>
+<body>
+<div class="ss"> <!-- 触发 mouseover click dbclick  -->
+	<ul class="navva clearfix">
+		<li id="id1" class="bgset">首页</li>
+		<li>电视剧</li>
+		<li>最新电影</li>
+		<li>新闻头条</li>
+		
+	</ul>
+	<div >1</div>
+	<div class="set">2</div>
+	<div class="set">3</div>
+	<div class="set">4</div>
+	
+</div>
+<div class="rectangle">
+	<div class="box-out">
+		<div class="box-in"></div>
+	</div>
+	<div>
+		<button id="but1">改变中间颜色</button><button id="but2">恢复中间颜色</button>
+	</div>
+
+</div>
+	
+</body>
+</html> 
