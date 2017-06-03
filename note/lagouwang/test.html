@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -282,4 +283,290 @@
 		/*})*/
 	</script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="./jq/jquery-1.5.1.min.js" ></script>
+	<style type="text/css">
+	body,html,div,ul,li,img{
+		margin:0px;
+		padding:0px; 
+	}
+	.clearfix::after{
+		content:"";
+		height:0;
+		display:block;
+		clear:both;
+	}
+	.out_{
+		position:relative;
+		width:100%;
+		height:500px;
+		background-color: gray;
+	}
+	.in_left{
+		position:relative;
+		float:left;
+		width:60%;
+		height:100%;
+		background-color: pink;
+	}
+	.in_right{
+		position:relative;
+		float:left;
+		width:40%;
+		height:100%;
+		background-color: yellow;
+	}
+	.img-box-left  ul li img{
+		width:400px;
+		height:100px;
+
+
+	}
+	.img-box-left  ul li {
+		margin: -4px 0px 0px 0px;
+	}
+	.img-box-left ul{
+		position:relative;
+		bottom:100px;
+		height:300px;
+		width:400px;
+		list-style: none;
+
+	}
+	.img-box-left{
+		
+		width:400px;
+		height:96px;
+		position:relative;
+		overflow: hidden; 
+		margin: 200px 50px 1px auto;
+		}
+	.img-box-right{
+		position: relative;
+		margin:0 auto;
+		height:50px;
+		width:100px;
+		margin: 160px 0px 0px 20px;
+	}
+	.img-box-right ul{
+		position:relative;
+		height:150px;
+		width:100px;
+		list-style: none;
+	}
+	.img-box-right ul li{
+		margin:2px;
+	}
+	.img-box-right ul li img{
+		width:115px;
+		height:50px;
+		
+	}
+	.img-box-right  em {
+	    width: 127px;
+	    height: 50px;
+	    background: url(./image/control_current_2d877b3.png) 0 0 no-repeat;
+	    position: absolute;
+	    z-index: 21;
+	    top: 0;
+	    left: -6px;
+	}
+	.set{
+		width:100%;
+		height:200px;
+		background-color: #e9e9e9;
+	}
+	
+	ol{
+		list-style: none;
+	}
+	  .hidden{
+		display:none;
+	} 
+	.menue ul{
+		list-style: none;
+	}
+	 .menue ul li{
+		width:200px;
+		
+		background-color: blue;
+	 }
+	 
+	 p{
+	 	margin:0;
+	 	padding:0;
+	 }
+	 .menue div{
+	 	width:200px;
+	 	height:50px;
+	 	text-align: center;
+	 }
+	 .bgcolorset{
+	 	background-color: yellow;
+	 	color: red;
+
+	 }
+
+	</style>
+</head>
+<body>
+	<div class="out_">
+		<div class="in_left">
+			<div class="img-box-left">
+				
+					<ul>
+						<li><img src="./image/Cgp3O1i_6e6AJ94mAARcreAKM-k559.JPG"></li>
+						<li><img src="./image/Cgp3O1jGEFGAV-gpAAHJdsDUoYQ062.JPG"></li>
+						<li><img src="./image/CgqKkVjGGueAfqvqAAFYK3JRP7U158.JPG"></li>
+					</ul>
+				
+			</div>
+
+		</div>
+		<div class="in_right">
+			<div class="img-box-right">
+				<em id="ema"> </em>
+				<ul>
+					<li><img src="./image/CgqKkVjGGu2AERmNAAAfc68wfak743.JPG"></li>
+					<li><img src="./image/CgqKkVjFS2iAWjCyAAAgHiAiF_Y592.JPG"></li>
+					<li><img src="./image/CgqKkVjGGueAfqvqAAFYK3JRP7U158.JPG"></li>
+				</ul>
+			</div>
+			
+		</div>
+	</div><!-- console.log(x) 调试方法 -->
+	<script type="text/javascript">
+		$(".img-box-right ul li").mouseover(function(){
+			var x=$(this).index();
+			if(x==0){
+				$(".img-box-left ul").stop().animate({bottom:"200px"},1000);
+				$("#ema").stop().animate({top:"+=20px"},100);
+				
+			};
+			if(x==1){
+				$(".img-box-left ul").stop().animate({bottom:"100px"},1000);
+				
+			};
+			if(x==2){
+				$(".img-box-left ul").stop().animate({bottom:"0px"},1000);
+				
+			};
+		});
+		/*$(".img-box-right ul li").mouseout(function(){
+			$(".img-box-left ul").stop();
+		});*/
+		
+	</script>
+	<div class="set"><!-- text取的是文字，value取的是 html取的所有包括结构 -->
+		<p>数据</p>
+		<input id="input_t" type="text"><button id="btn">确定</button>
+		<script type="text/javascript">
+			$(".set p").html("<p>你对力量一无所知</p>");
+			$("#btn").click(function(){
+				var val=$("input_t").val();
+				$(".set p").value();
+
+
+			});
+		</script>
+
+	</div>
+	<div class="set">
+		<p>用户名:<input name="用户名" type="text" id="name" value=""></p>
+		<p>密码:<input name="密码" type="password" id="password" value=""></p>
+		<p><input type="submit" name="提交">
+		<script type="text/javascript">
+			$("input[type='submit']").click(function(){
+				var name=$("#name").val();
+				var password=$("#password").val();
+				var passwordt="724344";
+				var namet="陈佳兴";
+				if(name==""){
+					alert("用户名不能为空");
+					return false;
+				}
+				if(password==""){
+					alert("密码不能为空");
+					return false;
+				}
+
+				if(password!=passwordt&&name!=namet){
+					alert("密码或用户名不正确");
+					return false;
+				}
+				
+				if(name==namet&&password==passwordt)
+				{
+					alert("输入正确");
+					
+				}
+
+				
+
+			});
+		</script>	
+	</div>
+	<div class="set">
+		<div class="menue">
+			<ul id="s1">
+				<li >
+					<p class="in-bar">1</p>
+					 <div  class="seted hidden">书</div>
+					 <div  class="seted hidden">书</div>
+					 <div  class="seted hidden">书</div>
+					 <div  class="seted hidden">书</div>
+
+				</li>
+				<li id="s2">
+					<p class="in-bar">2</p>
+					 <div  class="seted hidden">读书</div>
+					 <div  class="seted hidden">读书</div>
+					 <div  class="seted hidden">读书</div>
+					 <div  class="seted hidden">读书</div>
+				</li>
+				<li id="s3">
+					<p class="in-bar">3</p>
+					 <div  class="seted hidden">读好书</div>
+					 <div  class="seted hidden">读好书</div>
+					 <div  class="seted hidden">读好书</div>
+					 <div  class="seted hidden">读好书</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		/*$("#s1").click(function(){
+			$("#s11").siblings("div").addClass("bgcolorset").removeClass("hidden");
+			$("#s1").siblings().children("div").addClass("hidden");
+
+			
+		});
+		$("#s2").click(function(){
+			$("#s12").siblings("div").addClass("bgcolorset").removeClass("hidden");
+			$("#s2").siblings().children("div").addClass("hidden");
+
+			
+		});*/
+		 $(".menue ul li>p").click(function(){
+		 	$(this).siblings("div").removeClass("hidden").parent().siblings().children("div").addClass("hidden");
+
+		 });
+		/* $(function(){
+		 	$("#s1 li>p").click(function(){	<div>改成<ul><li></li></ul>用
+		 		$(".in-bar").hide();
+		 		$("this").siblings(".in-bar").show();
+		 	})
+		 })*/
+		
+			
+		/*})*/
+	</script>
+</body>
+>>>>>>> a7c64fb0df78c36df3789aae4bc168257fa7b726
 </html>
