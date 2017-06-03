@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        div.body,html,h3,h4,p{
+            padding:0px;
+            margin:0px;
+        }
+        h3{
+            position: absolute;
+            width:200px;
+            left:50px;
+            top:20px;
+            color:white;
+            z-index: 1000;
+        }
+        h4{
+            position: absolute;
+            width:100px;
+            left:10px;
+            top:100px;
+            color:white;
+            z-index: 1000; 
+        }
+        .lists{
+           display: relative; 
+        }
+
+        body{
+            background-color: black;
+        }
+        .out,.out_{
+            position: relative;
+
+        }
+        .shu_one,.shu_two{
+            position: relative;
+            width:10px;
+            height:50px;
+             transition: height 1s;
+            background-color: white;
+            color: white;
+        }
+        .height{
+            height:300px;
+            transition: height 1s;
+        }
+       .heng {
+            top: 10px;
+            left: -40px;
+            width: 38px;
+            height: 5px;
+            background-color: white;
+            position: absolute;
+        }
+        .donone{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="out_">
+            <div id="section-one"  class="shu_one">
+            
+
+            </div>
+            <h3 id="h3-one" class="lists"><div class="heng"></div>Click Me</h3>
+            <h4 id="h3-two" class="lists- donone">Click Me</h4>
+        </div>
+        <div class="out_">
+            <div id="section-two" class="shu_one">
+            
+            </div>
+            <h3 class="lists"><div class="heng"></div>Click Me Two</h3>
+        </div>
+    </div>
+   
+</body>
+
+<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript">
+    $(".lists").click(function(){
+        console.log("aa");
+        $(this).siblings(".shu_one").toggleClass("height").siblings(".lists-").fadeToggle("slow");;
+    })
+</script>
+</html>

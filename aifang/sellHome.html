@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>卖房</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/geshi.css">
+	<style type="text/css">
+		.title{
+			position:absolute;
+			left:50%;
+			margin-left: -4rem;
+			    display: inline-block;
+			    width: 30%;
+			    color: #000; 
+			    font-size: 1.6rem;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+		}
+		.b_jiange{
+			margin-bottom: 2rem;
+		}
+		.icon_right{
+			position: absolute;
+			right:2rem;
+			width:2rem;
+			height:2rem;
+			margin-top: 1rem;
+		}
+		.lists_shu{
+			width:100%;
+			background-color: white;
+		}
+		.lists_shu li{
+			height:4rem;
+			width:100%;
+		    border-bottom: 1px solid #e6e6e6
+		}
+		.list_shu_title{
+			float:left;
+			line-height: 4rem;
+			height:4rem;
+			margin-left: 2rem;
+		}
+		.upload{
+			width:100%;
+			height:4rem;
+			padding:1rem 1rem 0 1rem;
+
+		}
+		.upload button{
+			width:100%;
+			height:3rem;
+			outline: none;
+			border:none;
+			background: #39ac6a;
+			color:white;
+		}
+		.bg_shu{
+			width:100%;
+			margin:3rem 0rem;
+		}
+		.bg_shu_out{
+			width:100%;
+			padding:0 3rem;
+		}
+		.weizhif{
+			width:100%;
+			height:0rem;
+			overflow: hidden;
+			padding:1rem 1rem;
+		}
+		.input-group .form-control:last-child{
+			border-top-left-radius: 1rem;
+    		border-bottom-left-radius: 1rem;
+    		border-top-right-radius:1rem;
+    		border-bottom-right-radius:1rem;
+		}
+		.type_one{
+			transition:height 1s linear;
+		}
+		.boxs{
+			width:100%;
+			height:auto;
+			background-color: white;
+			padding: 1rem 1rem 0rem 1rem;
+		}
+		.boxs .left_{
+			display: inline-block;
+			width:20%;
+		    font-size: 1.6rem;
+		}
+		.boxs .right_{
+			display: inline-block;
+			width:72%;
+		}
+		.type_two{
+			    margin-top: 1rem;
+			    border:none;
+		}
+		.psset{
+			display: block;
+			height: 3rem;
+			font-size: 1.8rem;
+			line-height: 3rem;
+			padding: 0 1rem;
+		}
+		.boxs .bottom{
+			border-top:1px solid #e5e5e5;
+			height:3rem;
+			padding:0 1rem;
+			line-height: 3rem;
+			margin-bottom: 0rem;
+		}
+		.boxs .bottom i{
+			color:red;
+		}
+		.input-group-addon:first-child {
+			border:none;
+		    border-bottom:1px solid #e5e5e5;
+		    background-color: white;
+		}
+		#input_c{
+			border:none;
+			border-bottom:1px solid #e5e5e5;
+			outline: none;
+			border-radius: 0rem;
+		    box-shadow: none;
+		}
+		.input-group-addon:last-child {
+		    border:none;
+		    border-bottom:1px solid #e5e5e5;
+		    background-color: white;
+		}
+
+
+	</style>
+</head>
+<body>
+<div id="sell">
+	
+		<nav class="b_jiange navbar navbar-default navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div style="    padding: 0 1rem;" class="navbar-header">
+		      
+		      <span class="title">【北京房产网】买房</span>
+		      <a class="navbar-brand-l" href="#">
+		        <img class="fenxiang" alt="分享" src="./images/箭头左灰.png">
+		        <span style="color: #000;">返回</span> 
+		      </a>
+		    </div>
+		  </div>
+		</nav>
+	<div v-show="mainShow">
+		<div class="jichu">
+			<ul class="lists_shu">
+				<li v-on:click="skipFirst(0)">
+					<div class="list_shu_title">小区名字</div><img class="icon_right" src="./images/右箭头.png">
+				</li>
+				<div v-show="first[0]" class="weizhif input-group input-group-lg">
+				  <input type="text" class="form-control type_one" placeholder="输入小区名字" v-model="village_name" aria-describedby="sizing-addon1">
+				</div>
+				<li v-on:click="skipFirst(1)">
+					<div class="list_shu_title">楼栋号</div><img class="icon_right"  src="./images/右箭头.png">
+				</li>
+				<div v-show="first[1]" class="weizhif input-group input-group-lg">
+				  <input type="text" class="form-control type_one" placeholder="输入小区名字" v-model="l_name" aria-describedby="sizing-addon1">
+				</div>
+				<li v-on:click="skipFirst(2)">
+					<div class="list_shu_title">单元号</div><img class="icon_right" src="./images/右箭头.png">
+				</li>
+				<div v-show="first[2]" class="weizhif input-group input-group-lg">
+				  <input type="text" class="form-control type_one" placeholder="输入小区名字" v-model="d_num" aria-describedby="sizing-addon1">
+				</div>
+				<li v-on:click="skipFirst(3)">
+					<div class="list_shu_title">门牌号</div><img class="icon_right" src="./images/右箭头.png">
+				</li>
+				<div v-show="first[3]" class="weizhif input-group input-group-lg">
+				  <input type="text" class="form-control type_one" placeholder="输入小区名字" v-model="m_num" aria-describedby="sizing-addon1">
+				</div>
+			</ul>
+		</div>
+		<div class="upload">
+			<button v-on:click="skipNext">下一步</button>
+		</div>
+		<div class="bg_shu_out">
+			<img class="bg_shu" src="./images/pic.png">
+		</div>
+	</div>
+	<div v-show="!mainShow">
+		<p class="psset">您期望售价</p>
+		<div class="boxs">
+			<div class="left_">
+				售价
+			</div>
+			<div class="right_">
+				<input type="text" class="form-control type_two" placeholder="输入价钱" v-model="price" aria-describedby="sizing-addon1">
+			</div>
+			<div class="bottom">
+				<label>同小区成交均价<i>2.11</i>万元/m²</label>
+			</div>
+		</div>
+		<p class="psset">您的联系信息</p>
+		<div class="boxs" style="padding-bottom:1rem;">
+			<div class="input-group">
+			  <span class="input-group-addon">称呼</span>
+			  <input id="input_c" type="text" class="form-control" placeholder="请输入称呼" v-model="name" aria-label="Amount (to the nearest dollar)">
+			</div>
+		</div>
+		<div class="boxs" style="padding-bottom:1rem;">
+			<div class="input-group">
+			  <span class="input-group-addon">手机号</span>
+			  <input id="input_c" type="text" class="form-control" placeholder="请输入手机号" v-model="phone"  aria-label="Amount (to the nearest dollar)">
+			</div>
+		</div>
+		<div class="boxs" style="padding-bottom:1rem;">
+			<div class="input-group">
+			  <span class="input-group-addon">验证码</span>
+			  <input id="input_c" type="text" class="form-control" placeholder="请输入验证码" aria-label="Amount (to the nearest dollar)">
+			  <span class="input-group-addon">获取验证码</span>
+			</div>
+		</div>
+		<div class="boxs" style="padding-bottom:1rem;">
+			<div class="input-group arrow" >
+			  <span class="input-group-addon">期望出售时间</span>
+			  <input id="input_c" type="text" class="form-control" placeholder="请输入欲出售时间" aria-label="Amount (to the nearest dollar)">
+			  <span class="input-group-addon">请选择</span>
+			</div>
+		</div>
+		<div class="upload up">
+				<button v-on:click="skipSub">提交</button>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/huoqu.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="./js/swiper-3.4.2.min.js"></script>	
+<script type="text/javascript">
+var user_id=localStorage.getItem("user_id");
+
+var vm = new Vue({
+	      el: '#sell',
+	      data: {
+	      			isData:true,
+	      			l_name:"",
+	      			d_num:"",
+	      			m_num:"",
+	      			price:"",
+	      			phone:"",
+	      			name:"",
+	      			village_name:"",
+	      			first:[false,false,false,false],
+	      			isShow:false,
+	      			mainShow:true,			
+	        },
+	      methods:{
+	      	getData:function(){
+	      		
+	      		$.ajax({
+					type:'post',
+					dataType:'json',
+					url:'http://118.89.169.233/lianjia/index.php/home/condition/sale',
+					data:{
+						village_name:this.village_name,     //小区名称
+					    l_num:this.l_name,             //楼牌号
+					    d_num:this.d_num,            //单元号
+					    m_num:this.m_num,             //门牌号
+					    price:this.price,             //售价
+					    name:this.name,              
+					    phone:this.phone,
+					    user_id:this.user_id,
+					},
+					success:function(res){
+						if(res.status=="ok"){
+							alert(x);
+						}	
+						
+				   	}.bind(this),
+				   	error:function(){
+				   		console.log('接口未成功调用');
+				   		var timed=new Date();
+						console.log(x);
+						alert(x);
+				   	}
+				
+				});
+	      	},
+	      	skipFirst:function(e){
+	      		var x=[false,false,false,false];
+	      		this.first=x;
+	      		this.first.splice(e,1,true);
+	      		
+	      	},
+	      	skipNext:function(){
+	      		this.mainShow=!this.mainShow;
+	      	},
+	      	skipSub:function(){
+	      		this.getData();
+	      	},
+	      	lunbo:function(){
+	      		
+				
+	      	},
+		}
+
+	    });
+</script>
+</html>

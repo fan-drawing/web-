@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>tab选项卡</title>
+</head>
+<style>
+	html,body,ul,li{
+		padding: 0;
+		margin: 0;
+	}
+	.clearfix:after{
+		content:"";
+		height:0;
+		clear:both;
+		overflow: hidden;
+	}
+	ul{
+		background-color: white;
+	}
+	.tab{
+		width: 400px;
+		height: 400px;
+		background: #999;
+	}
+	.tab .nav{
+		float: left;
+		width: 50%;
+		height: 100%;
+	}
+	.tab .tabnext{
+		width:50%;
+		height: 100%;
+		float: left;
+/* 		overflow: hidden;
+ */	}
+	.tab ul li{
+		height: 20px;
+		width:100%;
+		text-align: center;
+		list-style: none;
+	}
+	.tabnext ul{
+		
+		height: 100%;
+/* 		display: none;
+ */	}
+	.addUl{
+		float:left;
+		width:50%;
+	}
+	ul li a{
+		display: block;
+		height:100%;
+		width:100%;
+	}
+	.active{
+		background-color:gray;
+		color:white;
+	}
+	.size{
+		width:200px;
+		height:60px;
+	}
+
+
+
+
+</style>
+<body>
+<div class="tab" v-show="showAll">
+	<ul id="first" class="nav">
+		<li v-for="(item,index) in firstli"><a @click="onclick(item,index)">{{item.name}}</a></li>
+	</ul>
+	<div class="tabnext">
+		<ul id="next" v-bind:class="showUl?'addUl':''">
+			<li v-for="(item,index) in firstliChild" ><a v-on:click="skipToThree(index)">{{item.name}}</a></li>
+		</ul>
+		<ul id="last" v-show="showUl" v-bind:class="showUl?'addUl':''">
+			<li v-for="(item,index) in nextliChild"><a v-on:click="skipQu(index)">{{item.name}}</a></li>
+		</ul>
+	</div>
+
+
+</div>
+<script src="./js/jquery-1.5.1.min.js"></script>
+<script src="./js/vue.js"></script>	
+<script>
+	var vm = new Vue({
+		el:'.tab',
+		data:{
+			firstli:[
+				{
+					id:1,
+					name:"吉林市",
+					child:[
+						{
+							name:"龙潭区",
+							nextchild:[
+								{
+									name:"百货大楼",
+								},
+								{
+									name:"北都",
+								},
+								{
+									name:"北华北校",
+								},
+							],
+						},
+						{
+							name:"丰满区",
+							nextchild:[
+								{
+									name:"丰满水电站",
+								},
+								{
+									name:"吉林女校",
+								},
+								{
+									name:"朱雀山",
+								},
+							],
+						},
+					],
+				},
+				{
+					id:2,
+					name:"口前市",
+					child:[
+						{
+							name:"郊区",
+						},
+						{
+							name:"市区",
+						},
+					],
+				},
+			],
+			msg:[],
+			index:"",
+			showAll:false,
+			showUl:false,
+			firstliChild:[],
+			nextliChild:[],
+		},
+		mounted:function(){
+			this.f();
+		},
+		methods:{
+			onclick:function(item,index){
+				this.firstliChild=this.firstli[index].child;
+				if(this.showUl==true){
+					this.showUl=!this.showUl;
+				}else{
+					this.showUl=!!this.showUl;
+				}
+
+			},
+			skipToThree:function(index){
+				if(this.showUl==false){
+					this.nextliChild=this.firstliChild[index].nextchild;
+					this.showUl=!this.showUl;
+				}else{
+					this.nextliChild=this.firstliChild[index].nextchild;
+				}
+				
+			},
+			skipQu:function(index){
+				var area=this.nextliChild[index].name;
+				console.log(area);
+			},
+			f:function(){
+				this.showAll=!this.showAll;
+			}
+		},
+	});
+	$("#first li").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+
+	});
+	$(".tab").on("click","#next li",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+	$(".tab").on("click","#last li",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+	
+</script>
+</body>
+</html>

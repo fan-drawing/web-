@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>新房介绍</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/geshi.css">
+	<link rel="stylesheet" type="text/css" href="./css/haiwai.css">
+	<link rel="stylesheet" type="text/css" href="./css/house.css">
+	<link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+	<style type="text/css">
+	body{
+		padding-top:0rem; 
+	}
+		.show_mine{
+			color:black;
+		    border-bottom: 1px solid #e5e5e5;
+		    font-size: 1rem;
+		    padding-bottom: 1.5rem;
+		    display: block;
+		}
+		.swiper-pagination-fraction {
+		    background-color: rgba(0,0,0,0.2);
+		    border-radius: 1rem;
+		    padding: 0.2rem 0.4rem;
+		    color: white;
+		    bottom: 10px;
+		    position: absolute;
+		   	right:0rem;
+		   	left:100%;
+		   	margin-left:-6rem;
+		    width:4rem;
+		}
+		.wenzi{
+			width:100%;
+			height:9rem;
+			    padding: 1rem;
+			line-height: 2rem;
+		   	overflow: hidden;
+		    -webkit-box-orient: vertical;
+    		-webkit-line-clamp: 5;
+	        display: -webkit-box;
+		    text-overflow: ellipsis;
+    		font-size: 1.8rem;
+		}
+		.house_feature {
+		    margin-bottom: 1rem;
+		    max-height: 4.5rem;
+		}
+		#s{
+			right:0rem;
+		}
+		a:hover {
+		    color: #333;
+		    text-decoration: none;
+		}
+		.res{
+			    top: 1.8rem;
+			position:absolute;
+			font-size: 0.6rem;
+			color: #9c9fa1;
+		}
+		.png_set{
+		    position: absolute;
+		    width: 3rem;
+		    height: 4rem;
+		    right: 1rem;
+		    top: 0;
+		}
+		h4{
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+		.navbar {
+		    position: relative;
+		    height: 4rem;
+		    line-height: 4rem;
+		    margin-bottom: 10px;
+		    border: 1px solid transparent;
+		}
+		#span_e{
+			    border-radius: 1rem 0rem 0 1rem;
+			    background-color: white;
+			    border-right: none;
+		}
+		#input_e{
+			border-left:none;
+			border-radius:0rem 1rem 1rem 0rem;
+		}
+		.input-group-lg>.input-group-addon{
+		    height: 3rem;
+		    padding: 10px 16px;
+		    font-size: 18px;
+		    line-height: 1.3333333;
+		    border-radius: 0;
+		}
+		.jichu{
+			width:100%;
+			padding:0 1rem;
+			margin:0;
+			margin-top: 1rem;
+		}
+		.container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+		     margin-right:0; 
+		     margin-left:0; 
+		}
+		.d2{
+			z-index: 1;
+		    
+		    width: 84%;
+		    height: 4rem;
+		    margin: 0 auto;
+		    box-shadow: 0 0 0.6rem rgba(0,0,0,.2);
+		    border-radius: 1.0rem;
+		    background-color: white;
+		    margin-top: 1rem;
+		}
+		.d1{
+		    z-index: 100;
+		    width: 96%;
+		    height: 4rem;
+		    margin: 0 auto;
+		    box-shadow: 0 0 0.6rem rgba(0,0,0,.2);
+		    border-radius: 1.2rem;
+		    background-color: white;
+		    margin-top: -3.4rem;
+			
+		}
+		.set_w{
+			width:100%;
+			margin-top: 1rem;
+		}
+		.set_lun{
+			width:100%;
+			height:auto;
+			border-radius: 1.2rem;
+			margin:0 auto;
+			margin-top: -3.4rem;
+		}
+		.mo_bian{
+			border-radius: 1.2rem;
+
+		}
+		.b{
+		    background: #f9f9f9;
+		}
+		.icon_6{
+			width: 100%;
+		}
+		.bg_icon_t {
+	        display: inline-block;
+		    background-color: #46a3ff;
+		    width: 5rem;
+		    height: 5rem;
+		    margin-bottom: 0.4rem;
+		    border-radius: 2.5rem;
+		    text-align: center;
+		    line-height: 3rem;
+		    overflow: hidden;
+		}
+		.icon_ji{
+	        display: inline-block;
+		    height: 1.875rem;
+		    line-height: 1.675rem;
+		    padding: .125rem .3125rem;
+		    font-size: .75rem;
+		    color: #999;
+		    border: 1px solid #999;
+		    border-radius: 0.6rem;
+		}
+		.nav_out_ban{
+			width:100%;
+		}
+		.nav_out_ban li {
+		    width: 50%;
+		    float: left;
+		    margin-bottom: 0rem;
+		    background-color: white;
+		    text-align: center;
+		    padding: 0rem 0rem;
+		}
+		.bg_icon_l{
+	        display: inline-block;
+		    background-color: white;
+		    width: 100%;
+		    height: auto;
+		    margin-bottom: 0rem;
+		    padding: 0.2rem;
+		    border-radius: 1rem;
+		    text-align: center;
+		    line-height: 3rem;
+		    overflow: hidden;
+		}
+	</style>
+</head>
+<body style="padding-bottom:4rem;background-color:#f9f9f9;">
+	<nav class="header navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img class="fenxiang icon_set_r" alt="分享" src="./images/用户绿.png"> 
+	        
+	      </a>
+	     <a href="/bj/" class="logo_wrap center"><span class="logo">链家网</span></a>
+	      <a class="navbar-brand-l" href="#">
+	        <img  class="fenxiang icon_set_l" alt="分享" src="./images/箭头左绿.png">
+	        <span class="zi">北京</span>
+	        <img class="icon" src="./images/下箭头绿.png"/>    
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+	<div class="top_h">
+		<div class="weizhi_ input-group input-group-lg">
+		  <span id="span_e" class="input-group-addon" id="sizing-addon1"><img class="icon_2" src="./images/搜索.png"></span>
+		  <input id="input_e" type="text" class="form-control" placeholder="输入小区或商圈开始找房" aria-describedby="sizing-addon1">
+		</div>
+	</div>
+	<div class="jichu b">
+		<div class="set_w">
+			<div class="d2"></div>
+			<div class="d1"></div>
+		</div>
+		<div class="set_lun">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide color-1"><img class="lunbo_img mo_bian" src="./images/wenda1495078152phpX7GziX.jpeg.702x338.jpg"></div>
+			        <div class="swiper-slide color-2"><img class="lunbo_img mo_bian" src="./images/wenda1495078152phpX7GziX.jpeg.702x338.jpg"></div>
+			        <div class="swiper-slide color-3"><img class="lunbo_img mo_bian" src="./images/wenda1495078152phpX7GziX.jpeg.702x338.jpg"></div>
+			    </div>
+			  	<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/swiper-3.4.2.min.js"></script>	
+		<script language="javascript"> 
+			var mySwiper = new Swiper('.swiper-container',{
+				pagination : '.swiper-pagination',
+				//pagination : '#swiper-pagination1',
+			})
+		</script> 
+	</div>
+	<div class="jichu">
+		<h3 class="mod_tit">
+			<a href="/us/jingjiren/" class="arrow">链家好顾问 <b>查看更多</b>
+          	</a>
+        </h3>
+			<ul class="nav_out clearfix">
+				<li>
+					<div class="bg_icon_t"><img class="icon_6" src="./images/phpkT0YOG1465280351.jpeg.150x200.jpg"></div>
+					<p class="icon_title">杨彦芳</p><span class="icon_ji">擅长交易</span>
+				</li>
+				<li>
+					<div class="bg_icon_t"><img class="icon_6" src="./images/phpkT0YOG1465280351.jpeg.150x200.jpg"></div>
+					<p class="icon_title">杨彦芳</p><span class="icon_ji">擅长交易</span>
+				</li>
+				<li>
+					<div class="bg_icon_t"><img class="icon_6" src="./images/phpkT0YOG1465280351.jpeg.150x200.jpg"></div>
+					<p class="icon_title">杨彦芳</p><span class="icon_ji">擅长交易</span>
+				</li>
+				<li>
+					<div class="bg_icon_t"><img class="icon_6" src="./images/phpkT0YOG1465280351.jpeg.150x200.jpg"></div>
+					<p class="icon_title">杨彦芳</p><span class="icon_ji">擅长交易</span>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="jichu">
+		<h3 class="mod_tit">
+			<a href="/us/jingjiren/">常见问题
+          	</a>
+        </h3>
+        <ul class="nav_out_ban clearfix">
+				<li>
+					<div class="bg_icon_l"><img class="icon_6" src="./images/phpGPvr511457603282.jpeg.750x.jpg"></div>
+					
+				</li>
+				<li>
+					<div class="bg_icon_l"><img class="icon_6" src="./images/phpGPvr511457603282.jpeg.750x.jpg"></div>
+					
+				</li>
+				<li>
+					<div class="bg_icon_l"><img class="icon_6" src="./images/phpGPvr511457603282.jpeg.750x.jpg"></div>
+					
+				</li>
+				<li>
+					<div class="bg_icon_l"><img class="icon_6" src="./images/phpGPvr511457603282.jpeg.750x.jpg"></div>
+					
+				</li>
+				
+			</ul>
+    </div>
+    <div class="jichu">
+		<h3 class="mod_tit">
+			<a href="/us/jingjiren/">热门提问
+          	</a>
+        </h3>
+    </div>
+    <footer class="footer">
+		<div class="nav">
+				<span class="location"><a href="/bj/">北京手机链家网</a></span>
+				</div>
+			<div class="link_box">
+		        <div class="link_tit">
+		                    <h3 class="li text_cut active" data-act="foot_nav">链家分站</h3>
+		                    <h3 class="li text_cut" data-act="foot_nav">热门城市</h3>
+		                </div>
+		        <div class="link_cont">
+                    <ul class="gridbox col_3 contlists active">
+                            <li class="box_col"><a href="http://m.lianjia.com/bj/">北京链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">成都链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/hz/">杭州链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/sh/">上海链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">天津链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">南京链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">青岛链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">广州链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">济南链家</a></li>
+                        </ul>
+                    <ul class="gridbox col_3 contlists">
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">重庆链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">苏州链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">武汉链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">深圳链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">长沙链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">大连链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">厦门链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">合肥链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">佛山链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">东莞链家</a></li>
+                            <li class="box_col"><a href="http://m.lianjia.com/cd/">烟台链家</a></li>
+                        </ul>
+                </div>
+		    </div>
+			<div class="info clearfix">
+				<div class="icon_box" style="float:left;">
+					<a class="icon_iphone lazyload_ulog">iPhone客户端</a>
+					<a class="icon_android lazyload_ulog">Android客户端</a>
+				</div>
+				<div class="copyright" style="float:right;">
+					<p class="company">北京链家房地产经纪有限公司</p>
+					<p class="record">网络经营许可证 京ICP备11024601号-12</p>
+				</div>
+			</div>
+	</footer>
+</body>
+</html>

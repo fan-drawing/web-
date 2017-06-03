@@ -1,0 +1,172 @@
+.lunbo_img{
+			width:100%;
+		}
+		.house_desc {
+		    font-size: 1.5625rem;
+		    font-weight: 700;
+		    line-height: 2rem;
+		    padding: 1rem 1.25rem;
+		   /*  padding: 1rem 0; */
+		    border-bottom: 1px solid #e5e5e5;
+		}
+		.house_price_lists{
+			list-style: none;
+			width:100%;
+		}
+		.house_price_lists li{
+			padding-left:1rem;
+			padding-top:1rem;
+			padding-bottom:1rem;
+			float:left;
+			width:33.3%;
+		/* 	text-align: center; */
+			height:auto;
+		}
+		.price_title{
+			font-size: 1.4rem;
+			color: #9c9fa1;
+		}
+		.price_show{
+		    color: #fa5741;
+		    font-size: 1.6rem;
+		    font-weight: bold;
+		}
+		.show_out{
+
+    		border-right: 1px solid #e5e5e5;
+		}
+		.house_price_lists li:last-child .show_out{
+		    border-right: none;
+		} 
+		.house_description {
+		    font-size: 1rem;
+		    margin: 0 1.25rem;
+		    overflow: hidden;
+		    border-top: 1px solid #e5e5e5;
+		    border-bottom: 1px solid #e5e5e5;
+		}
+		.tag_group {
+		    padding: 1.25rem 0 1.1875rem;
+		}
+		.house_description>.short:nth-child(even) {
+		    min-width: 52%;
+		    float: left;
+		    margin-bottom: .6rem;
+		    line-height: 1.6rem;
+		}
+		.gray {
+		    color: #9c9fa1;
+		}
+		.big{
+			font-size: 1.6rem;
+			    padding-bottom: 1rem;
+		}
+		.house_description>.long {
+		    min-width: 100%;
+		    float: left;
+		    margin-bottom: .6rem;
+		    line-height: 1.6rem;
+		}
+		.arrow {
+		    position: relative;
+		    line-height: 4rem;
+		}
+		.arrow:before {
+			right: -.5rem;
+		    position: absolute;
+		    content: " ";
+		    width: 1.5rem;
+		    height: 1.5rem;
+		    background: url(../images/右箭头.png) center center no-repeat;
+		    background-size: 50%;
+		    -webkit-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		    transform: translateY(-50%);
+		    right: .5rem;
+		    top: 52%;
+		}
+		 li.arrow>a {
+		    color: #5680a6;
+		}
+		.house_description li{
+			height: 4rem;
+			font-size: 1.8rem;
+		}
+		.house_description li.arrow>a {
+		    /* color: #849aae; */
+		        width: 80%;
+		    display: block;
+		}
+		.payment_guide {
+		    position: absolute;
+		    background-color: #394043;
+		    padding: .5rem 2rem .5rem .75rem;
+		    font-size: .8125rem;
+		    color: #cdcfd0;
+		    bottom: 2rem;
+		    left: 4.25rem;
+		    display: none;
+		    border-radius: .125rem;
+		}
+		.bt_{
+			text-align: center;
+			line-height: 4rem;
+			display: block;
+			width:80%;
+			height:4rem;
+		    background-color: #f9f9f9;
+	        border-color: #c5c5c5;
+   			color: #5680a6;
+		    font-size: 1.6rem;
+		    margin:0 auto;
+		    clear: both;
+		    font-weight: 700;
+		}
+		.jichu{
+			background-color:white; padding:0rem 1rem;
+		}
+		.padding_top{
+			padding-top:1rem;
+			padding-bottom:1rem;
+		}
+		.fixed_bot{
+			position: fixed;
+   			box-shadow: 0 -0.0625rem 0.125rem rgba(0,0,0,.1);
+			width:100%;
+			bottom:0rem;
+			height:4rem;
+		}
+		.btn_zhixun{
+		    position: absolute;
+		    width: 80%;
+		    right: 1rem;
+		    height: 3rem;
+		    border: none;
+		    background: #00ae66;
+		    outline: none;
+		    margin: 0 auto;
+		}
+		.left_set{
+			padding-top:0.5rem;
+			text-align: center;
+			
+		}
+		h4{
+			font-size: 2rem;
+		}
+		.light{
+			overflow: hidden;
+		    line-height: 2rem;
+		    -o-text-overflow: ellipsis;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;s
+		}
+		.col-xs-4 {
+		    padding:0;
+		    margin:0;
+		    height:100%;
+		}
+		.tu_fang{
+			width:100%;
+			height:8rem;
+		}

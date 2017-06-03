@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>功能</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/geshi.css">
+	<link rel="stylesheet" type="text/css" href="./css/category_select.css">
+	<style type="text/css">
+	.input-group .form-control:last-child{
+		    border-top-right-radius: 1rem;
+    		border-bottom-right-radius: 1rem;	
+    	}
+	.input-group-lg>.input-group-addon {
+	    height: 31px;
+	    padding: 5px 8px;
+	    font-size: 18px;
+	    line-height: 1.333333;
+	    border-radius: 0;
+	    border-top-left-radius: 1rem;
+	    border-bottom-left-radius: 1rem;
+	    background-color: white;
+	    border-right: none;
+	}
+	.input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn {
+		        height: 36px;
+		    padding: 5px 9px;
+		    font-size: 12px;
+		    line-height: 1.3333333;
+		    border-radius: 1rem 0rem 0rem 1rem;
+		}
+	.lists_citys li a{
+		    width: 50%;
+		    line-height: 3rem;
+		    padding-left: 0rem;
+	}
+	.lists_citys li {
+	    width: 100%;
+	    height: 3rem;
+	        padding-left: 0rem;
+	    line-height: 3rem;
+	    text-align: center;
+	    border-bottom: 1px solid #e5e5e5;
+	}
+	.a_one{
+		    margin-top: 0rem;
+	}
+
+	.a_two{
+		border-left:1px solid #e5e5e5;
+	}
+	.ban{
+		width:50%;
+	}
+	a{
+
+	    color: #333;	
+	}
+	a:hover {
+	    color: #333;
+	    text-decoration: none;
+	}
+	.sss ul{
+		float:left;
+	}
+	.ge-3 {
+	    padding-left: 0rem;
+	    padding-right: 0rem;
+	    line-height: 3rem;
+	    background-color: white;
+	}
+	.lists_citys_g li,.lists_citys_j li{
+		padding-left: 1rem;
+	}
+	/* .gees:first-child{
+	    height: 3rem;
+	    padding-left: 2rem;
+	    line-height: 3rem;
+	    background-color: white;
+	}  */
+	.act{
+		 height: 3rem;
+	    padding-left: 2rem;
+	    line-height: 3rem;
+	    background-color: white;
+	}
+	.col-xs-8{
+	    position: relative;
+	    min-height: 1px;
+	    padding-right: 0px;
+	    padding-left: 0px;
+	}
+	.oo{
+		        box-shadow: 0.1rem 0.1rem red;
+	}
+	
+
+	</style>
+</head>
+<body class="">
+<div id="erhouse">
+<div class="meng active">
+<div class="oo" v-on:click="zhuzhi">
+	<div class="navs_lists_S fixed_aset">
+		<ul class="select_S clearfix">
+			<li><span>区域</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+			<li><span>价格</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+			<li><span>房型</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+			<li><span>更多</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+		</ul>
+	</div>
+	<div id="one" class="gee active">
+		<div  style="padding:0;margin:0;"  class="col-xs-4 gee gees">
+			<div v-for="(value,index) in area" class="col-xs-12 ge-2 special-d"><a v-on:click="skipArea(index)">{{value.name}}</a></div>
+		</div>
+		<div  class="sss col-xs-8 ge-3 clearfix">
+			<ul style="border-left:1px solid #e5e5e5;" class="lists_citys " v-bind:class="isA?'ban':''">
+				<li v-for="(values,indexs) in areas"><a class="a_one" v-on:click="skipsli(indexs)">{{values.name}}</a></li><!-- v-show="right" -->
+			</ul>
+			<ul style="border-left:1px solid #e5e5e5;" class="lists_citys" v-show="isA" v-bind:class="isA?'ban':''" >
+				<li v-for="(values,indexs) in kidCity"><a v-on:click="select(indexs)" class="a_one" >{{values.name}}</a></li><!-- v-show="right" -->
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+				<li><a class="a_one" >吉林</a></li>
+
+			</ul>
+		</div>
+
+	</div>
+	<div id="two" class="gee active">
+
+		<div class="col-xs-12 ge-3">
+			<ul class="lists_citys_g">
+				<li>不限</li>
+				<li>200万以下</li>
+				<li>200万以下</li>
+				<li>200万以下</li>
+				<li>200万以下</li>
+				<li>200万以下</li>
+				<li>吉林</li>
+				<li>吉林</li>
+				<li>吉林</li>
+				<li>吉林</li>
+				<li>吉林</li>
+			</ul>
+		</div>
+		<div class="bottom_c">
+			<span class="first">自定义价格</span> <span class="max">最大</span><span>-</span><span class="min">最小</span> <span class="queding">确定</span>
+		</div>
+	</div>
+	<div id="three" class="gee active">
+		<div class="col-xs-12 ge-3">
+			<ul class="lists_citys_g">
+				<li>一室</li>
+				<li>二室</li>
+				<li>三室</li>
+				<li>四室</li>
+				<li>五室</li>
+				<li>六室</li>
+				<li>吉林</li>
+				<li>吉林</li>
+				<li>吉林</li>
+				<li>吉林</li>
+				<li>吉林</li>
+			</ul>
+		</div>
+		<div class="bottom_c">
+			<button class="select_numh">确定</button>
+		</div>
+	</div>
+	<div id="four" class="gee active">
+	<div style="overflow: auto;height:30rem;"> 
+		<div class="col-xs-12 ge-3">
+		<p class="four_title">朝向</p>
+			<ul class="lists_citys_j clearfix">
+				<li><a class="select_lists_i">朝东</a></li>
+				<li><a class="select_lists_i">朝南</a></li>
+				<li><a class="select_lists_i">朝北</a></li>
+				<li><a class="select_lists_i">朝西</a></li>
+				<li><a class="select_lists_i">南北</a></li>
+
+			</ul>
+		</div>
+		<div class="col-xs-12 ge-3">
+		<p class="four_title">面积</p>
+			<ul class="lists_citys_j clearfix">
+				<li><a class="select_lists_i">不限</a></li>
+				<li><a class="select_lists_i">50-60平</a></li>
+				<li><a class="select_lists_i">60-70平</a></li>
+				<li><a class="select_lists_i">70-90平</a></li>
+				<li><a class="select_lists_i">90-120平</a></li>
+
+			</ul>
+		</div>
+		<div class="col-xs-12 ge-3">
+		<p class="four_title">标签</p>
+			<ul class="lists_citys_j clearfix">
+				<li><a class="select_lists_i">一年</a></li>
+				<li><a class="select_lists_i">二年</a></li>
+				<li><a class="select_lists_i">三年</a></li>
+				<li><a class="select_lists_i">四年</a></li>
+				<li><a class="select_lists_i">五年</a></li>
+
+			</ul>
+		</div>
+		<div class="col-xs-12 ge-3">
+		<p class="four_title">标签</p>
+			<ul class="lists_citys_j clearfix">
+				<li><a class="select_lists_i">一年</a></li>
+				<li><a class="select_lists_i">二年</a></li>
+				<li><a class="select_lists_i">三年</a></li>
+				<li><a class="select_lists_i">四年</a></li>
+				<li><a class="select_lists_i">五年</a></li>
+
+			</ul>
+		</div>
+	</div>
+		<div class="bottom_c">
+			<button class="select_numh">确定</button>
+		</div>
+	</div>
+		
+</div>	
+</div>
+	<nav class="header navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img class="fenxiang icon_set_r" alt="分享" src="./images/用户绿.png"> 
+	        
+	      </a>
+	     <a href="/bj/" class="logo_wrap center"><span class="logo">链家网</span></a>
+	      <a class="navbar-brand-l">
+	        <img  class="fenxiang icon_set_l" alt="分享" src="./images/箭头左绿.png">
+	        <span class="zi">{{area_name}}</span>
+	        <img class="icon" src="./images/下箭头绿.png"/>
+	      </a>
+	    </div>
+	  </div>
+	</nav>	
+	<div class="top_h">
+		<div class="weizhi_ input-group input-group-lg">
+		  <span class="input-group-addon" id="sizing-addon1"><img class="icon_2" src="./images/搜索.png"></span>
+		  <input style="border-left: none;" type="text" class="form-control" placeholder="输入小区或商圈开始找房" aria-describedby="sizing-addon1">
+		</div>
+	</div>
+	<div id="S" class="navs_lists_S">
+		<ul class="select_S clearfix">
+			<li><span>区域</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+			<li><span>价格</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+			<li><span>房型</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+			<li><span>更多</span><img class="icon_sanjiao" src="./images/下三角.png"></li>
+		</ul>
+	</div>
+	<div    class="select_nav bottom_top">
+		<ul class="select_home">
+			<li v-for="(value,indexs) in houses">
+				  <div class="col-xs-4 padding_"><img class="size" v-bind:src="value.img"></div>
+				  <div  style="padding-left: 17px;" class="col-xs-8 padding_r">
+					<p class="title_home">{{value.title}}</p>
+					<p class="title_show">{{value.content}}</p>
+					<p class="title_b"><span class="money">{{value.price}}</span><span class="jiaqian">50640元/平</span></p>
+					<span class="sign_1">满五年</span><span class="sign_2">随时看房</span>
+				  </div>
+				  
+			</li>
+			<!-- <li>
+				  <div class="col-xs-4 padding_"><img class="size" src="./images/bfbfe9da-4dfb-4834-971d-a3883f385b0d.jpg.210x164.jpg"></div>
+				  <div class="col-xs-8 padding_r">
+					<p class="title_home">正规小两居，格局方正</p>
+					<p class="title_show">2/1厅/62.21m<sup>2</sup>/南 北/首都机场</p>
+					<p class="title_b"><span class="money">315万</span><span class="jiaqian">50640元/平</span></p>
+					<span class="sign_1">满五年</span><span class="sign_2">随时看房</span>
+				  </div>
+				  
+			</li>
+			<li>
+				  <div class="col-xs-4 padding_"><img class="size" src="./images/bfbfe9da-4dfb-4834-971d-a3883f385b0d.jpg.210x164.jpg"></div>
+				  <div class="col-xs-8 padding_r">
+					<p class="title_home">正规小两居，格局方正</p>
+					<p class="title_show">2/1厅/62.21m<sup>2</sup>/南 北/首都机场</p>
+					<p class="title_b"><span class="money">315万</span><span class="jiaqian">50640元/平</span></p>
+					<span class="sign_1">满五年</span><span class="sign_2">随时看房</span>
+				  </div>
+				  
+			</li>
+				<li>
+				  <div class="col-xs-4 padding_"><img class="size" src="./images/bfbfe9da-4dfb-4834-971d-a3883f385b0d.jpg.210x164.jpg"></div>
+				  <div class="col-xs-8 padding_r">
+					<p class="title_home">正规小两居，格局方正</p>
+					<p class="title_show">2/1厅/62.21m<sup>2</sup>/南 北/首都机场</p>
+					<p class="title_b"><span class="money">315万</span><span class="jiaqian">50640元/平</span></p>
+					<span class="sign_1">满五年</span><span class="sign_2">随时看房</span>
+				  </div>
+				  
+			</li>
+				<li>
+				  <div class="col-xs-4 padding_"><img class="size" src="./images/bfbfe9da-4dfb-4834-971d-a3883f385b0d.jpg.210x164.jpg"></div>
+				  <div class="col-xs-8 padding_r">
+					<p class="title_home">正规小两居，格局方正</p>
+					<p class="title_show">2/1厅/62.21m<sup>2</sup>/南 北/首都机场</p>
+					<p class="title_b"><span class="money">315万</span><span class="jiaqian">50640元/平</span></p>
+					<span class="sign_1">满五年</span><span class="sign_2">随时看房</span>
+				  </div>
+				  
+			</li>
+				<li>
+				  <div class="col-xs-4 padding_"><img class="size" src="./images/bfbfe9da-4dfb-4834-971d-a3883f385b0d.jpg.210x164.jpg"></div>
+				  <div class="col-xs-8 padding_r">
+					<p class="title_home">正规小两居，格局方正</p>
+					<p class="title_show">2/1厅/62.21m<sup>2</sup>/南 北/首都机场</p>
+					<p class="title_b"><span class="money">315万</span><span class="jiaqian">50640元/平</span></p>
+					<span class="sign_1">满五年</span><span class="sign_2">随时看房</span>
+				  </div>
+				  
+			</li> -->
+		</ul>
+	</div>
+</div>
+</body>
+
+<script type="text/javascript" src="./js/huoqu.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+
+<script type="text/javascript">
+var icon_id=getParam("icon_id");
+var city_name=getParam("city_name");
+var user_id=localStorage.getItem("user_id");
+var vm = new Vue({
+	      el: '#erhouse',
+	      data: {
+	      			area_id:"",
+	      			city_id:"1",
+	      			area_name:"北京",
+	      			isData:true,
+
+	      			city:{},
+	      			area:[],
+	      			areas:[],
+	      			houses:[],
+	      			kidCity:[],
+	      			Fshow:[true],
+	      			isA:false,
+	      			isShow:false,
+	      			right:false,				
+	        },
+	        mounted:function(){
+		        this.getData();
+		        this.isData = false;
+		       
+		        
+		    },
+		    updated:function(){
+		    	 $("#one gee:first-child").addClass("ge");
+	    	},
+		   
+	      methods:{
+	      	getData:function(){
+	      		
+	      		$.ajax({
+					type:'post',
+					dataType:'json',
+					url:'http://118.89.169.233/lianjia/index.php/home/condition/sec_rent',
+					data:{
+						
+					    /*icon_id:icon_id,*/   //点击的是二手房还是租房
+					    area_id:this.city_id,   //所属城市id
+					    /*area_no:this.area_id, */  //具体所属区域id
+					    user_id:user_id,
+					    /*icon_id:icon_id,   
+					    area_id:this.city_id,   
+					    area_no:this.area_id,   
+					    user_id:user_id,*/
+					},
+					success:function(res){
+						console.log(res);
+						if(res.status=="ok"){
+							this.city_id=res.city.id;
+							this.city=res.city;
+							this.area=res.area;
+							this.area_name=city_name;
+							this.areas=res.area[0].child;
+							this.houses=res.houses;
+							for(var i=1;i<this.areas.length;i++){
+								this.Fshow.push("false")
+							}
+						}	
+						console.log(this.city)
+						console.log(this.areas)
+						console.log(this.houses)
+						
+				   	}.bind(this),
+				   	error:function(){
+				   		console.log('接口未成功调用');
+				   		var timed=new Date();
+				   	}
+				
+				});
+	      	},
+	      	lunbo:function(){
+	      		
+				
+	      	},
+	      	skipArea:function(index){
+	      		this.areas=this.area[index].child;
+
+	      	},
+	      	zhuzhi:function(){
+      			event.stopPropagation();
+	      	},
+	      	select:function(indexs){
+	      		console.log(indexs)
+	      		this.area_id=this.kidCity[indexs].id;
+	      		this.area_name=this.kidCity[indexs].name;
+	      	},
+	      	skipsli:function(indexs){
+	      		if(this.isA==false){
+	      			this.isA=!this.isA;
+	      		}
+	      		
+	      		this.kidCity=[];
+	      		for(var i=0;i<this.areas[indexs].kid.length;i++){
+	      			this.kidCity.push(this.areas[indexs].kid[i]);
+	      		}
+	      		
+	      		this.right=!this.right;
+	      		console.log(typeof this.kidCity);
+	      		event.stopPropagation();
+	      	},
+		}
+
+	    });
+</script>
+<script type="text/javascript">
+function jianting() {
+	var height=document.body.scrollTop;
+  if(height>123){
+  	$("#S").addClass("fixed_aset");
+  }else{
+  	$("#S").removeClass("fixed_aset");
+  }
+}
+var interval=setInterval('jianting()',1000);
+
+$(document).scroll(jianting);
+$("#S li").click(function(){
+	clearInterval(interval);
+	if($(this).hasClass("color_1")){
+		$('.meng').addClass("active");
+		$("#S").removeClass("fixed_aset");
+		$("body").removeClass('xianz').css("height","auto");
+	}else{
+		var h=$(document).width();
+		$("body").addClass('xianz').css("height","+h+");
+		var index=$(this).index();
+		$(this).addClass("color_1").siblings().removeClass("color_1");
+		$(".meng").removeClass("active").children().children(".gee").eq(index).removeClass("active").siblings().addClass("active");
+		$("#S").addClass("fixed_aset");
+	}	
+})
+$(".meng").click(function(){
+	$(this).addClass("active");
+	$("#S").removeClass("fixed_aset");
+	$("#S li").removeClass("color_1");
+	$("body").removeClass('xianz').css("height","auto");
+})
+$("#one").on("click",".special-d",function(){
+	
+	$(this).removeClass("ge-2").addClass("ge").siblings(".special-d").removeClass("ge").addClass("ge-2");
+});
+</script>
+</html>

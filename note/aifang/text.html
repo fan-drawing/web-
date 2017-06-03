@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.red{
+			background-color: red;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div id="b">
+		<div id="s1">
+		<h1 >{{text.person}}</h1>
+		<h1 id="bb" v-if="ok" >{{text.name}}</h1>
+		</div>
+	</div>
+	
+</body>
+<body>
+	<h1>You are welcome two</h1>
+</body>
+<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript">
+	console.log(undefined==null);
+	var vm=new Vue({
+		el:"#b",
+		data:{
+			ok:false,
+			text:{
+				'person':'万涵',
+			},
+		},
+	});
+	vm.text.name="扣扣";
+	vm.ok=!vm.ok;
+	console.log(vm.text.name);
+	$("#b").on("click","#s1 h1",function(){
+		$(this).addClass("red");
+	});
+	console.log(12%5);
+	
+</script>
+</html>
+

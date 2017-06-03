@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/geshi.css">
+
+	<style type="text/css">
+		body{
+			padding-top: 0rem;
+		}
+		.form-group{
+			padding:0 1rem;
+			background-color: white;
+		}
+		form{
+			background-color: white;
+		}
+		.login_bttom{	
+			text-align: center;
+		}
+		.form-control {
+		    display: block;
+		    width: 100%;
+		    height: 34px;
+		    padding: 6px 12px;
+		    font-size: 14px;
+		    line-height: 1.42857143;
+		    color: #555;
+		    background-color: #fff;
+		    background-image: none;
+		    border-bottom: 1px solid #ccc;
+		    border-top:none;
+		    border-left:none;
+		    border-right:none;
+		    box-shadow: none;
+		    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		}
+		.size_but{
+			width:90%;
+			margin:0 auto;
+			border-color: #00ae66;
+    		background: #00ae66;
+    		color:white;
+    		font-weight: bold;
+		}
+		.top_login{
+
+		}
+		.col-xs-6{
+			text-align: center;
+		}
+		.top_bod_a{
+			border-bottom: 4px solid #39ac6a;
+			color:#39ac6a;
+		}
+		.top_bod_b{
+		    border-bottom: 4px solid gray;
+		}
+		.bbb{
+			display: block;
+			width:90%;
+			margin:0 auto;
+		}
+		.bbb .f1{
+			float:left;
+			margin-top: 1rem;
+			color:#333;
+		}
+		.bbb .f2{
+			float:right;
+			margin-top: 1rem;
+		}
+		.yanzheng{
+			position: absolute;
+		    right: 3rem;
+		    top: 0rem;
+		    height: 2rem;
+		    width: 2rem;
+		}
+	</style>
+</head>
+<body>
+<div id="login">
+	<div class="top_login">
+		<div class="col-xs-6 top_bod_a">普通登录</div>
+		<div class="col-xs-6 top_bod_b">快速登录</div>
+	</div>
+	<form>
+	  <div class="form-group">
+	    <input type="text" id="mobile" class="form-control" placeholder="输入电话">
+	  </div>
+	  <div class="form-group">
+	    <input type="password" id="pass" class="form-control" id="exampleInputPassword1" placeholder="输入密码">
+	  </div>
+	  <div style="position:relative;" class="form-group">
+	    <input type="text"  class="form-control" placeholder="验证码"><img class="yanzheng" src="./images/搜索.png">
+	  </div>
+	</form>
+	<div class="login_bttom clearfix">
+	  <button id="lg_b" type="submit" class="btn size_but btn-default">立即登录</button>
+	  <p class="bbb"><a href="zuce.html" class="f1">立即注册</a><span class="f2">忘记密码</span></p>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="./js/jquery-1.5.1.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/huoqu.js"></script>
+	<script type="text/javascript">
+	$("#lg_b").click(function(){
+		var password=$("#pass").val();
+		var mobile=$("#mobile").val();
+		console.log(password);
+		console.log(mobile);
+		$.ajax({
+
+				type:'post',
+				dataType:'json',
+				url:'http://118.89.169.233/lianjia/index.php/home/user/login',
+				data:{
+					mobile:mobile,
+   					password:password,
+				},
+				success:function(res){
+					console.log(res);
+					if(res.status=="ok"){
+						localStorage.setItem("user_id",res.info.user_id);
+						window.location.href="index.html";
+					}
+							
+			   	}
+			
+			});
+	});
+	$(".top_login .col-xs-6").click(function(){
+		$(this).addClass("top_bod_a").removeClass("top_bod_b").siblings().removeClass("top_bod_a").addClass("top_bod_b");
+	})
+			      	
+			      		
+			      
+		
+	</script>
+</html>
