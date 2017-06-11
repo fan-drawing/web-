@@ -42,7 +42,7 @@ h1{
 	    background: url(../image/control_current_2d877b3.png) 0 0 no-repeat;
 	    position: absolute;
 	    z-index: 1010;
-	    top: 0;
+	    top: 55px;
 	    left: -6px;
 }
 .current {
