@@ -335,6 +335,45 @@
 	    height: 123px;
 	    background-color: white;
 	}
+	.move{
+		position: absolute;
+		top: 113px;
+		left:0px;
+		width:113px;
+		height:113px;
+	    background: rgba(0,179,138,.9);
+	}
+	.carousel_bottom li{
+		position:relative;
+		overflow: hidden;
+	}
+	.carousel_bottom li h2 {
+    	font-size: 24px;
+	    height: 24px;
+	    line-height: 24px;
+	    margin: 10px 8px 8px;
+	    color: #fff;
+	    font-weight: 400;
+	    text-align: center;
+	    overflow: hidden;
+	}
+	.carousel_bottom li p {
+		 color: #fff;
+	    font-size: 12px;
+	    margin: 6px 8px;
+	    line-height: 18px;
+	}
+	.carousel_bottom li img{
+		display: block;
+	}
+	.middle_k{
+	    display: block;
+	    width: 100px;
+	    height: 5px;
+	    background: rgba(255,255,255,.3);
+	    background: #fff\0;
+	    margin: 0 6px;
+	}
 
 
 	
@@ -580,7 +619,7 @@
 				<div class="carousel clearfix">
 					<div class="carousel_box">
 						<ul class="carousel_left">
-							<li><img src="./image/Cgp3O1jGEFGAV-gpAAHJdsDUoYQ062.JPG"></li>
+							<li ><img src="./image/Cgp3O1jGEFGAV-gpAAHJdsDUoYQ062.JPG"></li>
 							<li><img src="./image/CgqKkVjLVdyAWrU3AAHcH6rkFD4075.JPG"></li>
 							<li><img src="./image/CgqKkVjGGueAfqvqAAFYK3JRP7U158.JPG"></li>
 						</ul>
@@ -592,6 +631,7 @@
 						<li><i></i><img src="./image/CgqKkVjGGu2AERmNAAAfc68wfak743.JPG"></li>
 					</ul>
 					<script type="text/javascript">
+
 						$(".carousel_right li").mouseover(function(){
 							var index=$(this).index();
 							console.log(index)
@@ -617,13 +657,93 @@
 					
 				</div>
 				<ul class="carousel_bottom clearfix">
-						<li><img src="./image/Cgo8PFVUDROAf7zrAABr5cEcbGQ572.jpg"></li>
-						<li><img src="./image/Cgp3O1eF3Y2ATvzpAABz_EKb5Y8878.png"></li>
-						<li><img src="./image/Cgp3O1hJE0aAavBYAAAdYg3UWJA210.png"></li>
-						<li><img src="./image/CgqKkVihfnSAT7O4AAAfgKf8_VE323.png"></li>
-						<li><img src="./image/Cgp3O1eE0RqAAUNFAABfSE6GJrs344.png"></li>
-						<li><img src="./image/CgqKkVfhCHGAZ1KRAAAYqkb3Ifs733.jpg"></li>
+						<li id="div1">
+							<img src="./image/Cgo8PFVUDROAf7zrAABr5cEcbGQ572.jpg">
+							<div  class="move">
+								<h2>易油卡</h2>
+								<div class="middle_k"></div>
+								<p>团队优秀、福利待遇好、临近地铁</p>
+							</div>
+						</li>
+						<li>
+							<img src="./image/Cgp3O1eF3Y2ATvzpAABz_EKb5Y8878.png">
+							<div  class="move">
+								<h2>发好人</h2>
+								<div class="middle_k"></div>
+								<p>团队优秀、福利待遇好、临近地铁</p>
+							</div>
+						</li>
+						<li>
+							<img src="./image/Cgp3O1hJE0aAavBYAAAdYg3UWJA210.png">
+							<div  class="move">
+								<h2>不走了</h2>
+								<div class="middle_k"></div>
+								<p>团队优秀、福利待遇好、临近地铁</p>
+							</div>
+						</li>
+						<li>
+							<img src="./image/CgqKkVihfnSAT7O4AAAfgKf8_VE323.png">
+							<div  class="move">
+								<h2>可以得</h2>
+								<div class="middle_k"></div>
+								<p>团队优秀、福利待遇好、临近地铁</p>
+							</div>
+						</li>
+						<li>
+							<img src="./image/Cgp3O1eE0RqAAUNFAABfSE6GJrs344.png">
+							<div  class="move">
+								<h2>再看看</h2>
+								<div class="middle_k"></div>
+								<p>团队优秀、福利待遇好、临近地铁</p>
+							</div>
+						</li>
+						<li>
+							<img src="./image/CgqKkVfhCHGAZ1KRAAAYqkb3Ifs733.jpg">
+							<div  class="move">
+								<h2>算了吧</h2>
+								<div class="middle_k"></div>
+								<p>团队优秀、福利待遇好、临近地铁</p>
+							</div>
+						</li>
 				</ul>
+				<script type="text/javascript">
+					$(".carousel_bottom li").mouseenter(function(e){
+						$(this).children(".move").css({"display": "block","left": "0px","top":" 0px","transition": "all 300ms ease"})
+					});
+					$(".carousel_bottom li").mouseleave(function(){
+						$(this).children(".move").css({"display": "block","left": "0px","top":" -100%","transition": "all 300ms ease"})
+					});
+					/* window.onload = function () {
+			            var oDiv = document.getElementById('div1');
+			            var x1 = oDiv.offsetLeft,
+			                y1 = -oDiv.offsetTop, 
+			                x2 = x1 + oDiv.offsetWidth,
+			                y2 = y1 - oDiv.offsetHeight,
+			                x0 = (x1 + x2) / 2,
+			                y0 = (y1 + y2) / 2;
+			            var k = (y2 - y1) / (x2 - x1); 
+			            alert(-k)
+			           oDiv.onmouseover = function (e) {
+			                var e = e || window.event;
+			                var x = e.clientX, 
+			                    y = -e.clientY;
+			              var K = (y - y0) / (x - x0); 
+			                if (k < K && K < -k) {
+			                    if (x > x0) {
+			                        alert('右');
+			                    } else {
+			                        alert('左');
+			                    }
+			                } else {
+			                    if (y > y0) {
+			                       alert('上');
+			                   } else {
+			                        alert('下');
+			                    }
+			                }
+			            }
+			        }*/
+				</script>
 
 				<div id="se">
 					<div class="tap"><span class="hotTap current" >热门职业</span><span class="newTap color">最新职业</span></div>
@@ -633,6 +753,7 @@
 							$(this).addClass("current").siblings().removeClass("current");
 							$("#se ul").eq(set).removeClass("hiddenset").siblings("ul").addClass("hiddenset");
 						});
+						    
 							
 					</script>
 					<ul class="tap-list-one ">
