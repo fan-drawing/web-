@@ -1,0 +1,29 @@
+
+	body,html,span,a,p,div,img,li,ul{
+		padding:0px;
+		margin:0px;
+	}
+	ul{
+		list-style:none;
+	}
+	body {
+	    font-family: "Microsoft Yahei";
+	    margin: 0 auto;
+	    padding: 0;
+	    font-size: 12px;
+	    color: #333;
+	}
+	a{
+		text-decoration: none;
+		
+		font-size: 14px;
+		text-shadow: 0 0px 1px #fff;
+		outline-style: 20px;
+	}
+	.clearfix::after{
+		content:".";
+		display:block;
+		height:0;
+		clear:both;
+		visibility:hidden
+	}

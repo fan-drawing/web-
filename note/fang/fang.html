@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="./css/quanju.css">
+	<link rel="stylesheet" type="text/css" href="./css/jubu.css">
+	<title>房天下</title>
+	<script type="text/javascript">
+				window.onload=function(){
+				     var wrap=document.getElementById('wrap'),
+				     pic=document.getElementById('pic').getElementsByTagName("li"),
+				     list=document.getElementById('list').getElementsByTagName('li'),
+				     index=0,
+				     timer=null;
+				     timer = setInterval(autoPlay, 2000);
+				     wrap.onmouseover = function () {
+				     clearInterval(timer);
+				 } 
+				 wrap.onmouseout = function () {
+				      timer = setInterval(autoPlay, 2000);
+				 }
+				 for (var i = 0; i < list.length; i++) {
+				     list[i].onmouseover = function () {
+				     clearInterval(timer);
+				     index = this.innerText - 1;
+				     changePic(index);
+				    };
+				 };
+				 function autoPlay () {
+				     if (++index >= pic.length) index = 0;
+				     changePic(index);
+				 } 
+				 function changePic (curIndex) {
+				     for (var i = 0; i < pic.length; ++i) {
+				     pic[i].style.display = "none";
+				     list[i].className = "";
+				     }
+				     pic[curIndex].style.display = "block";
+				     list[curIndex].className = "on";
+				  }
+
+				 };
+
+				 </script> 	
+						
+
+		
+</head>
+<body>
+		<div class="top-nav">
+			<div class="top-nav-main clearfix">
+				<ul class="top-nav-main-left clearfix">
+					<li><a href="https://">全国<img src="./image/navicon.gif" alt="" /></a></li>
+					<li><a href="https://">首页</a></li>
+					<li><a href="https://">新房</a></li>
+					<li><a href="https://">二手房</a></li>
+					<li><a href="https://">租房</a></li>
+					<li><a href="https://">查房价</a></li>
+					<li><a href="https://">装修家居</a></li>
+					<li><a href="https://">写字楼</a></li>
+					<li><a href="https://">商铺</a></li>
+					<li><a href="https://">业主论坛</a></li>
+					<li><a href="https://">房产百科</a></li>
+					<li><a href="https://">移动app</a></li>
+					<li><a href="https://">更多</a></li>
+				</ul>
+				<ul class="top-nav-main-right">
+					<li><a href="https://"><i class="kft1"></i>看房</a></li>
+					<li><a href="https://"><i class="kft2"></i>订单</a></li>
+					<li><a href="https://">登录</a></li>
+					<li><a href="https://">注册</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="banner">
+			<div id="wrap" class="banner-show">
+				<span class="bt">广告 泽信公馆&nbsp;&nbsp;[丰台]&nbsp;&nbsp;</span>
+				<a  class="banner-bg">
+					<ul id="pic">
+						<li><img src="./image/01.jpg" width="2000" height="464"></li>
+						<li><img src="./image/02.jpg" width="2000" height="464"></li>
+					</ul>
+					<ol id="list">
+						 <li class="on">1</li>
+						 <li>2</li>	 
+					</ol>
+				</a>
+				 
+				<div class="banner-select">
+					<div class="banner_magnr">
+						<div class="banner-select-top clearfix">
+							<div class="banner-select-top-left">
+								<a href="https://" >
+									<img src="./image/slogoV01.png">
+								</a>
+							</div>
+							<div class="banner-select-top-right">
+								<span>
+									<a href="">全国</a>
+									<a href="">
+										<span>【</span>切换城市<span>】</span>
+									</a>
+								</span>
+							</div>
+						</div>
+						<div class="banner-list clearfix">
+						<ul>
+							<li><a href="https://">查房价</a></li>
+							<li><a href="https://">买新房</a></li>
+							<li><a href="https://">买二手房</a></li>
+							<li><a href="https://">找租房</a></li>
+							<li><a href="https://">装修家居</a></li>
+							<li><a href="https://">房产快迅</a></li>
+							<li><a href="https://">海外房产</a></li>
+						</ul>
+						</div> 
+						<div class="banner-input clearfix">
+							<img src="./image/navsjt.gif">
+							<input name="" type="text" class="banner-input-style" value="请输入小区名称或地址，给自己的房子估个价" maxlength="40" id="projnames" style="color: rgb(136, 136, 136);">
+							<span class="sbuttonstyle"></span>
+						</div>
+					</div>
+
+				</div>	
+			</div>
+		</div> 
+		<div class="news">
+			<div class="news-select-area clearfix">
+				<div class="news-main clearfix">
+					<div class="news-main-left">
+						<p>卖房</p>
+					</div>
+					<div class="news-main-right">
+						<p><span>新房</span><span>二手房</span></p>
+						<p><span>业主论坛</span><span>海外房产</span></p>
+					</div>
+				</div>
+				<div class="news-main clearfix">
+					<div class="news-main-left">
+						<p>卖房</p>
+					</div>
+					<div class="news-main-right">
+						<p><span>新房</span><span>二手房</span></p>
+						<p><span>业主论坛</span><span>海外房产</span></p>
+					</div>
+				</div>
+				<div class="news-main clearfix">
+					<div class="news-main-left">
+						<p>卖房</p>
+					</div>
+					<div class="news-main-right">
+						<p><span>新房</span><span>二手房</span></p>
+						<p><span>业主论坛</span><span>海外房产</span></p>
+					</div>
+				</div>
+				<div class="news-main clearfix">
+					<div class="news-main-left">
+						<p>卖房</p>
+					</div>
+					<div class="news-main-right">
+						<p><span>新房</span><span>二手房</span></p>
+						<p><span>业主论坛</span><span>海外房产</span></p>
+					</div>
+				</div>
+				<div class="news-main clearfix">
+					<div class="news-main-left">
+						<p>卖房</p>
+					</div>
+					<div class="news-main-right">
+						<p><span>新房</span><span>二手房</span></p>
+						<p><span>业主论坛</span><span>海外房产</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="display clearfix">
+			<div class="display-select">
+				<ul>
+					<li><a>热销楼盘</a></li>
+					<li><a>品牌地产</a></li>
+					<li><a>特价房</a></li>
+				</ul>
+			</div>
+			<div class="display-shower clearfix">
+				<div class="display-shower-block">
+					<div class="top">
+						<img src="./image/282186.jpg " alt=" 兴创荣墅 " width="260" height="160" border="0">
+					</div>
+					<div class="top-text">
+						<a href=" http://" target="_blank"> 兴创荣墅 </a>
+					</div>
+					<div class="bottom clearfix">
+						<div class="bottom-left">
+							<a>大兴</a>
+							<p>彩城路彩西路交口处</p>
+						</div>
+						<div class="bottom-right">
+							<h1>别墅</h1>
+							<p>350-410m<sup>2</sup></p>
+						</div>
+					</div>
+				</div>
+				<div class="display-shower-block">
+					<div class="top">
+						<img src="./image/282186.jpg " alt=" 兴创荣墅 " width="260" height="160" border="0">
+					</div>
+					<div class="top-text">
+						<a href=" http://" target="_blank"> 兴创荣墅 </a>
+					</div>
+					<div class="bottom clearfix">
+						<div class="bottom-left">
+							<a>大兴</a>
+							<p>彩城路彩西路交口处</p>
+						</div>
+						<div class="bottom-right">
+							<h1>别墅</h1>
+							<p>350-410m<sup>2</sup></p>
+						</div>
+					</div>
+				</div>
+				<div class="display-shower-block">
+					<div class="top">
+						<img src="./image/282186.jpg " alt=" 兴创荣墅 " width="260" height="160" border="0">
+					</div>
+					<div class="top-text">
+						<a href=" http://" target="_blank"> 兴创荣墅 </a>
+					</div>
+					<div class="bottom clearfix">
+						<div class="bottom-left">
+							<a>大兴</a>
+							<p>彩城路彩西路交口处</p>
+						</div>
+						<div class="bottom-right">
+							<h1>别墅</h1>
+							<p>350-410m<sup>2</sup></p>
+						</div>
+					</div>
+				</div>
+				<div class="display-shower-block">
+					<div class="top">
+						<img src="./image/282186.jpg " alt=" 兴创荣墅 " width="260" height="160" border="0">
+					</div>
+					<div class="top-text">
+						<a href=" http://" target="_blank"> 兴创荣墅 </a>
+					</div>
+					<div class="bottom clearfix">
+						<div class="bottom-left">
+							<a>大兴</a>
+							<p>彩城路彩西路交口处</p>
+						</div>
+						<div class="bottom-right">
+							<h1>别墅</h1>
+							<p>350-410m<sup>2</sup></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="laybox clearfix">
+			<div class="t-left">
+					<div class="t1-left">
+						<a href="http://" target="_blank"> 新房</a>
+						<span><a href="http://" target="_blank">用地图找</a></span>
+					</div>
+					<div class="t2-left" >
+						<a href="http://">最新开盘</a>
+					</div>
+				<div class="xfroll">
+					<ul>
+						<li>
+							<div class="timebox"></div>
+							<div class="infbox">
+								<span>热盘推荐</span>
+								<p><em>600万元/套</em>
+						          	<a class="cmsA" href="http://"title="远洋天著春秋晓山">远洋天著春秋晓山</a>
+						          	<input type="hidden" value="http://">
+					          	</p>
+							
+								<p >
+									<em>1000万/套起</em>
+						          	<a  href="http://" title="景粼源著">景粼源著</a>
+						          	<input type="hidden">
+					          	</p>
+							</div>
+						</li>
+					</ul>				
+				</div>
+				<div class="xfroll">
+					<ul>
+						<li>
+							<div class="timebox"></div>
+							<div class="infbox">
+								<span>热盘推荐</span>
+								<p><em>600万元/套</em>
+						          	<a href="http://"title="远洋天著春秋晓山">远洋天著春秋晓山</a>
+						          	<input type="hidden" value="http://">
+					          	</p>
+							
+								<p >
+									<em>1000万/套起</em>
+						          	<a href="http://" title="景粼源著">景粼源著</a>
+						          	<input type="hidden">
+					          	</p>
+							</div>
+						</li>
+					</ul>				
+				</div>
+			</div>
+			<div class="t-right">
+				<div class="t1-right-top">
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span><em>|</em>
+					<span>人气楼盘</span>
+				</div>
+				<div class="t-pic">
+					<ul class="picList1">	
+					    <div>
+						    <li>
+						    	<div class="imgbox">
+									<a href="http://" >
+										<img src="./image/282187.jpg" alt="" width="207" height="138" border="0" src="" style="display: inline;">
+									</a>
+									
+									<div class="text">
+										<p>
+							    			<a class="cmsA" href="http://">廊坊孔雀城大公馆</a>
+											
+							          		<a class="cmsA" href="http://" target="_blank">[廊坊]</a>
+											
+										</p>
+									</div>
+								</div>
+								<div class="imginfo">
+									<p>
+										<span class="price">21500元/㎡</span>
+										<span class="number">
+					                   		<em class="red">2057</em>人报名
+					                   	</span>
+				                  		
+									</p>
+				                  	<a class="cmsA" href="http://" >
+				                  		<p class="yh">建面130-150平3-4居洋房、高层</p>
+									</a>
+									
+								</div>
+							</li>
+							<li>
+						    	<div class="imgbox">
+									<a href="http://" >
+										<img src="./image/282187.jpg" alt="" width="207" height="138" border="0" src="" style="display: inline;">
+									</a>
+									
+									<div class="text">
+										<p>
+							    			<a class="cmsA" href="http://">廊坊孔雀城大公馆</a>
+											
+							          		<a class="cmsA" href="http://" target="_blank">[廊坊]</a>
+											
+										</p>
+									</div>
+								</div>
+								<div class="imginfo">
+									<p>
+										<span class="price">21500元/㎡</span>
+										<span class="number">
+					                   		<em class="red">2057</em>人报名
+					                   	</span>
+				                  		
+									</p>
+				                  	<a class="cmsA" href="http://" >
+				                  		<p class="yh">建面130-150平3-4居洋房、高层</p>
+									</a>
+									
+								</div>
+							</li>
+
+					
+					
+						</div>
+					</ul>
+					<ul class="picList1">	
+					    <div>
+						    <li>
+						    	<div class="imgbox">
+									<a href="http://" >
+										<img src="./image/282187.jpg" alt="" width="207" height="138" border="0" src="" style="display: inline;">
+									</a>
+									
+									<div class="text">
+										<p>
+							    			<a class="cmsA" href="http://">廊坊孔雀城大公馆</a>
+											
+							          		<a class="cmsA" href="http://" target="_blank">[廊坊]</a>
+											
+										</p>
+									</div>
+								</div>
+								<div class="imginfo">
+									<p>
+										<span class="price">21500元/㎡</span>
+										<span class="number">
+					                   		<em class="red">2057</em>人报名
+					                   	</span>
+				                  		
+									</p>
+				                  	<a class="cmsA" href="http://" >
+				                  		<p class="yh">建面130-150平3-4居洋房、高层</p>
+									</a>
+									
+								</div>
+							</li>
+					
+						</div>
+					</ul>
+				</div>
+				<div class="t-talk">
+				</div>
+			</div>
+		</div>
+</body>
+</html>
