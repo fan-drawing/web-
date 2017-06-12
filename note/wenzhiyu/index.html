@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="utf-8" />
+	
+	<meta name="keeyname" content="文字狱">
+	<meta name="generator" content="Dreanweave 8"> 
+	<!--<meta http-equiv="refresh" content="10,url=http://bilibili.com"> -->
+	<title>文字狱</title>
+
+	<style type="text/css">
+
+		* {margin: 0; padding: 0;}
+
+		body {background: black;}
+		canvas {display: block;}
+	</style>
+</head>
+
+<body style="overflow:-Scroll;overflow-y:hidden" >
+	<canvas id="c"></canvas>
+	<script type="text/javascript">
+	var c = document.getElementById("c");
+	var ctx = c.getContext("2d");<!---2D绘图->
+
+	c.height = 768;
+	c.width = 1360;
+	
+	var chinese ="人间失格";
+	chinese = chinese.split("");<!-- 拆分字符-->
+	
+
+	var font_size =15;
+	var columns = c.width/font_size;
+	var drops = [];
+	for(var x = 0; x < columns; x++)
+	{
+	drops[x] = 1; 
+	
+	function draw()
+	{
+		ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+		ctx.fillRect(0, 0, c.width, c.height);
+	
+		ctx.fillStyle = "#0F0"; 
+		ctx.font = font_size + "px arial";
+		for(var i = 0; i < drops.length; i++)
+		{
+			var text = chinese[Math.floor(Math.random()*chinese.length)];
+			ctx.fillText(text, i*font_size, drops[i]*font_size);
+			if(drops[i]*font_size > c.height && Math.random() > 0.975)
+				drops[i] = 0;	
+				drops[i]++;
+		}
+	}
+	}
+	setInterval(draw,33);
+	</script>
+	<p>欢迎</p>`
+	</body>
+</html>
